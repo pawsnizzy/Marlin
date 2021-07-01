@@ -3,10 +3,10 @@
 //  Tune HE PID Values 15th December 2020
 //  Added BTT TFT35 Screen 18th December 2020
 //  Changed Bed Probing margins from 10 to 15mm and added m/c UUID 4th January 2021
+//  Enable Bezier Curve support 5th Feb 2021
 //  Calibrate Extruder steps 7th Feb 2021
-//	Update to latest bugfix 24th June 2021
-//
-//
+//  Update to latest bugfix 24th June 2021
+//  Add Z2 axis 27th June 2021
 //
 //
 //
@@ -658,7 +658,7 @@
 //
 // For Z set the number of stepper drivers
 //
-#define NUM_Z_STEPPER_DRIVERS 1   // (1-4) Z options change based on how many
+#define NUM_Z_STEPPER_DRIVERS 2   // (1-4) Z options change based on how many
 
 #if NUM_Z_STEPPER_DRIVERS > 1
   // Enable if Z motor direction signals are the opposite of Z1
@@ -837,7 +837,7 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-//#define Z_STEPPER_AUTO_ALIGN
+#define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
@@ -2591,7 +2591,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z2)
-    #define Z2_CURRENT      800
+    #define Z2_CURRENT      760
     #define Z2_CURRENT_HOME Z2_CURRENT
     #define Z2_MICROSTEPS    Z_MICROSTEPS
     #define Z2_RSENSE         0.11

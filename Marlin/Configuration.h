@@ -6,7 +6,7 @@
 //  Enable Bezier Curve support 5th Feb 2021
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
-//
+//  Add Z2 axis 27th June 2021
 //
 //
 //
@@ -797,7 +797,7 @@
 #define Z_DRIVER_TYPE  TMC2208
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2208
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
