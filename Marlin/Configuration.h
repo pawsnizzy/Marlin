@@ -6,7 +6,7 @@
 //  Enable Bezier Curve support 5th Feb 2021
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
-//  Add Z2 axis 27th June 2021
+//  Add Z2 axis 3rd July 2021
 //
 //
 //
@@ -142,7 +142,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "24-06-21"
+#define CUSTOM_MACHINE_NAME "Dual Z-Axis"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4

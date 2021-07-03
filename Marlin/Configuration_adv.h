@@ -6,7 +6,7 @@
 //  Enable Bezier Curve support 5th Feb 2021
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
-//  Add Z2 axis 27th June 2021
+//  Add Z2 axis 3rd July 2021
 //
 //
 //
