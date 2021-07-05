@@ -7,7 +7,7 @@
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
 //  Add Z2 axis 3rd July 2021
-//  Enable Nozzel Offset wizard 4th July 2021
+//  Enable Nozzle Offset wizard 4th July 2021
 //
 //
 //
