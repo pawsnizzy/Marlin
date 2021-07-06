@@ -6,9 +6,9 @@
 //  Enable Bezier Curve support 5th Feb 2021
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
-//  Add Z2 axis 3rd July 2021
+//  Add Z2 axis 3rd July 2021 (unproved)
 //  Enable Nozzle Offset wizard 4th July 2021
-//
+//  Change motherboard to SKR v1.4 Turbo  10th July 2021
 //
 //
 /**
@@ -114,7 +114,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 //#define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -138,11 +138,11 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_BTT_SKR_V1_3
+  #define MOTHERBOARD BOARD_BTT_SKR_V1_4_TURBO
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Dual Z-Axis"
+#define CUSTOM_MACHINE_NAME "SKR v1.4 Turbo"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
