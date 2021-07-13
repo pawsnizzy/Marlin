@@ -5,8 +5,8 @@
 //  Changed Bed Probing margins from 10 to 15mm and added m/c UUID 4th January 2021
 //  Calibrate Extruder steps 7th Feb 2021
 //	Update to latest bugfix 24th June 2021
-//
-//
+//  Update for new SKR v1.4 Turbo motherboard 10th July 2021
+//  Implement TMC2209s and SensorLess Homing on X & Y Axis 
 //
 //
 //
@@ -755,7 +755,7 @@
 #define HOMING_BUMP_MM      { 5, 5, 2 }       // (mm) Backoff from endstops after first bump
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-//#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
+#define HOMING_BACKOFF_POST_MM { 10, 2, 2 }  // (mm) Backoff from endstops after homing
 
 #define QUICK_HOME                            // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
@@ -931,8 +931,8 @@
 //#define MULTI_NOZZLE_DUPLICATION
 
 // By default pololu step drivers require an active high signal. However, some high power drivers require an active low signal as step.
-#define INVERT_X_STEP_PIN false
-#define INVERT_Y_STEP_PIN false
+#define INVERT_X_STEP_PIN true
+#define INVERT_Y_STEP_PIN true
 #define INVERT_Z_STEP_PIN false
 #define INVERT_I_STEP_PIN false
 #define INVERT_J_STEP_PIN false
@@ -2904,9 +2904,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  8
+    #define X_STALL_SENSITIVITY  120
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  8
+    #define Y_STALL_SENSITIVITY  120
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
@@ -2935,7 +2935,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
