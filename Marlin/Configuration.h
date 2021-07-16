@@ -7,7 +7,9 @@
 //  Calibrate Extruder steps 7th Feb 2021
 //  Update to latest bugfix 24th June 2021
 //  Update for new SKR v1.4 Turbo motherboard 10th July 2021
-//  Implement TMC2209s and SensorLess Homing on X & Y Axis 
+//  Add 2nd Z Axis Motor 13th July 2021
+//  Implement SensorLess Homing on X & Y Axis 
+//
 //
 //
 //
@@ -142,7 +144,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "BT_Standard"
+#define CUSTOM_MACHINE_NAME "Dual Z Axis"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -542,9 +544,9 @@
     #define DEFAULT_Ki_LIST {   1.54,   1.54 }
     #define DEFAULT_Kd_LIST {  76.55,  76.55 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp  34.53   //Default 22.20   (change for MicroSwiss Matal Hotend)
+    #define DEFAULT_Ki   3.73   //Default 1.08    (change for MicroSwiss Matal Hotend)
+    #define DEFAULT_Kd  79.93   //Default 114.00  (change for MicroSwiss Matal Hotend)
   #endif
 #endif // PIDTEMP
 
@@ -797,7 +799,7 @@
 #define Z_DRIVER_TYPE  TMC2208
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2208
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 //#define I_DRIVER_TYPE  A4988
